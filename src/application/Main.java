@@ -27,34 +27,40 @@ public class Main extends Application {
 
 		initRootLayout();
 
-		showPersonOverview();
+//		showPersonOverview();
 	}
 
 	/**
 	 * Initializes the root layout.
 	 */
 	public void initRootLayout() {
-		try {
+		//try {
 			// Load root layout from fxml file.
 			FXMLLoader loader = new FXMLLoader();
-			URL location = Main.class.getClassLoader().getResource(
-					"fxml/RootLayout.fxml");
+			URL location = 
+					getClass().getClassLoader().getResource("resources/fxml/RootLayout.fxml");
+					//Main.class.getClassLoader().getResource("fxml/RootLayout.fxml");
 			System.out.println(location);
-			loader.setLocation(Main.class.getResource("view/RootLayout.fxml"));
-			rootLayout = (BorderPane) loader.load();
+			Platform.exit();
+			loader.setLocation(location);
+			//rootLayout = (BorderPane) loader.load();
 
 			// Show the scene containing the root layout.
-			Scene scene = new Scene(rootLayout, 400, 400);
-			scene.setOnKeyPressed((EventHandler<KeyEvent>) k -> {
-				System.out.println("you clicked " + k.getText());
-				if (k.getCode() == KeyCode.C)
-					Platform.exit();
-			});
-			primaryStage.setScene(scene);
-			primaryStage.show();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//			Scene scene = new Scene(rootLayout, 400, 400);
+
+			// set a key listener because we need a way to terminate the
+			// application on the raspberry pi
+//			scene.setOnKeyPressed((EventHandler<KeyEvent>) k -> {
+//				System.out.println("you clicked " + k.getText());
+//				if (k.getCode() == KeyCode.C)
+//					Platform.exit();
+//			});
+
+//			primaryStage.setScene(scene);
+//			primaryStage.show();
+		//} catch (IOException e) {
+		//	e.printStackTrace();
+		//}
 	}
 
 	/**
