@@ -5,11 +5,7 @@ import java.net.URL;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -27,40 +23,41 @@ public class Main extends Application {
 
 		initRootLayout();
 
-//		showPersonOverview();
+		// showPersonOverview();
 	}
 
 	/**
 	 * Initializes the root layout.
 	 */
 	public void initRootLayout() {
-		//try {
-			// Load root layout from fxml file.
-			FXMLLoader loader = new FXMLLoader();
-			URL location = 
-					getClass().getClassLoader().getResource("resources/fxml/RootLayout.fxml");
-					//Main.class.getClassLoader().getResource("fxml/RootLayout.fxml");
-			System.out.println(location);
-			Platform.exit();
-			loader.setLocation(location);
-			//rootLayout = (BorderPane) loader.load();
+		// try {
+		// Load root layout from fxml file.
+		FXMLLoader loader = new FXMLLoader();
+		URL location = getClass().getClassLoader().getResource(
+				"resources/fxml/RootLayout.fxml");
+		// Main.class.getClassLoader().getResource("fxml/RootLayout.fxml");
+		System.out.println(location);
+		System.out.println(this.getClass().getResource("/"));
+		Platform.exit();
+		loader.setLocation(location);
+		// rootLayout = (BorderPane) loader.load();
 
-			// Show the scene containing the root layout.
-//			Scene scene = new Scene(rootLayout, 400, 400);
+		// Show the scene containing the root layout.
+		// Scene scene = new Scene(rootLayout, 400, 400);
 
-			// set a key listener because we need a way to terminate the
-			// application on the raspberry pi
-//			scene.setOnKeyPressed((EventHandler<KeyEvent>) k -> {
-//				System.out.println("you clicked " + k.getText());
-//				if (k.getCode() == KeyCode.C)
-//					Platform.exit();
-//			});
+		// set a key listener because we need a way to terminate the
+		// application on the raspberry pi
+		// scene.setOnKeyPressed((EventHandler<KeyEvent>) k -> {
+		// System.out.println("you clicked " + k.getText());
+		// if (k.getCode() == KeyCode.C)
+		// Platform.exit();
+		// });
 
-//			primaryStage.setScene(scene);
-//			primaryStage.show();
-		//} catch (IOException e) {
-		//	e.printStackTrace();
-		//}
+		// primaryStage.setScene(scene);
+		// primaryStage.show();
+		// } catch (IOException e) {
+		// e.printStackTrace();
+		// }
 	}
 
 	/**
