@@ -9,8 +9,11 @@ class ButtonClickerModel(QObject):
 
    def incrementClicks(self):
       self.clicks += 1
-      #TODO : Signal
+      self.newClicks.emit()
 
    def getClicks(self):
       return self.clicks
-      #TODO : synchronize?
+
+   def getClickUpdates(self,func):
+      self.newClicks.connect(func)
+
