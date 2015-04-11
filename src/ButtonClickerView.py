@@ -4,12 +4,12 @@
     Registers the button with a listener for incrementing.
 """
 from PyQt4 import QtGui, QtCore
-from ButtonControlClicker import ButtonControlClicker
-from ButtonControlModel import ButtonControlModel
+from ButtonClickerControl import ButtonClickerControl
+from ButtonClickerModel import ButtonClickerModel
 
-class ButtonClickerViewer(QtGui.QMainWIndow):
+class ButtonClickerView(QtGui.QMainWindow):
     def __init__(self, controller, model): 
-        super(ButtonClickerViewer, self).__init__()
+        super(ButtonClickerView, self).__init__()
         self.controller = controller
         self.model = model
         self.initUI()
@@ -19,7 +19,7 @@ class ButtonClickerViewer(QtGui.QMainWIndow):
     def initUI(self):
         inc_button = QtGui.QPushButton('ClickButton', self)
         self.inc_label = QtGui.QLabel('0', self)
-        inc_button.clicked.connect(buttonClicked)
+        inc_button.clicked.connect(self.buttonClicked)
         
     def buttonClicked(self):
         sender = self.sender()

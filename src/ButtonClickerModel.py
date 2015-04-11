@@ -5,7 +5,7 @@ class ButtonClickerModel(QObject):
 
    def __init__(self):
       super().__init__()
-      this.clicks = 0
+      self.clicks = 0
 
    def incrementClicks(self):
       self.clicks += 1

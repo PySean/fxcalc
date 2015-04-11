@@ -1,7 +1,7 @@
 from ButtonClickerModel import ButtonClickerModel
 from PyQt4 import QtCore
 
-class ButtonclickerControl():
+class ButtonClickerControl():
 
     def __init__(self, model):
         self.model = model
