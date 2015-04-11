@@ -5,7 +5,7 @@ class ButtonclickerControl():
 
     def __init__(self, model):
         self.model = model
-        self.fselect = {"Button1":self.increment}
+        self.fselect = {"ClickButton":self.increment}
 
     def handle(self, sender):
         self.fselect[sender.text()]()
