@@ -19,11 +19,13 @@ class ButtonClickerView(QtGui.QMainWindow):
     def initUI(self):
         inc_button = QtGui.QPushButton('ClickButton', self)
         self.inc_label = QtGui.QLabel('0', self)
+        self.inc_label.move(20, 20)
         inc_button.clicked.connect(self.buttonClicked)
+        self.show()
         
     def buttonClicked(self):
         sender = self.sender()
         self.controller.handle(sender)
 
     def refreshUI(self):
-        self.inc_label.setText(str(self.model.clicks))
+        self.inc_label.setText(str(self.model.getClicks()))
